@@ -204,7 +204,7 @@
         render: function() {
           var passedProps = this.props;
           var props = {};
-          Object.keys(this.props).forEach(function(key) {
+          Object.keys(this.props).filter(function(key) { return key !== 'componentClass' }).forEach(function(key) {
             props[key] = passedProps[key];
           });
           if (Component.prototype.isReactComponent) {
